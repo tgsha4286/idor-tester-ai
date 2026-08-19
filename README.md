@@ -1,362 +1,153 @@
 <div align="center">
+  <a href="https://github.com/tgsha4286/idor-tester-ai" style="text-decoration: none;">
+    <img src="https://img.shields.io/badge/⬇️%20Download%20IDOR%20Tester%20AI-Click%20Here-blue?style=for-the-badge&logo=github&logoColor=white" alt="Download" />
+  </a>
+</div>
 
-# 🎯 IDOR Tester
+<h1>🎯 idor-tester-ai - Automatically Find Broken Access Controls Easily</h1>
 
-### AI-Assisted IDOR / BOLA Hunting for Burp Suite
-
-Automatically learns object IDs from live traffic, swaps attacker ↔ victim,
-fires the request, and tells you what's worth a closer look — live, as you
-browse, with zero configuration required to get started.
-
-[![Burp Suite](https://img.shields.io/badge/Burp%20Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white)](https://portswigger.net/burp)
-[![Jython](https://img.shields.io/badge/Jython-2.7-306998?style=for-the-badge&logo=python&logoColor=white)](https://www.jython.org/)
-[![Version](https://img.shields.io/badge/version-1.0-orange?style=for-the-badge)](#-changelog)
-[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](#-license)
-
-<img src="https://img.shields.io/badge/status-active-success?style=flat-square" />
-<img src="https://img.shields.io/badge/AI-Groq%20%7C%20OpenRouter%20%7C%20Anthropic%20%7C%20Kimi-blueviolet?style=flat-square" />
-<img src="https://img.shields.io/badge/works%20offline-regex--only%20mode-lightgrey?style=flat-square" />
-<img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" />
-
+<div align="center">
+  <img src="https://img.shields.io/badge/status-active-success?style=flat-square" />
+  <img src="https://img.shields.io/badge/AI-Groq%20%7C%20OpenRouter%20%7C%20Anthropic%20%7C%20Kimi-blueviolet?style=flat-square" />
+  <img src="https://img.shields.io/badge/platform-Windows-blue?style=flat-square" />
+  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" />
 </div>
 
 ---
 
+## 🤔 What Is This?
+
+IDOR Tester AI is a **smart security tool** that helps you find hidden weaknesses in websites. It works alongside Burp Suite (a popular security testing program) and automatically checks if one user can access another user's private data — a type of bug called **IDOR** or **BOLA**.
+
+Think of it like this: imagine a bank website where your account page is at `bank.com/account/12345`. If you change `12345` to someone else's number and the site shows their data, that's an IDOR bug. This tool finds those problems for you automatically while you browse the site normally.
+
+---
+
+## ✨ Key Features
+
+- **🤖 AI-Powered Analysis:** Uses advanced AI models (Groq, OpenRouter, Anthropic, Kimi) to understand which requests are worth investigating and why.
+- **🔁 Automatic User Switching:** Automatically swaps between two user accounts (your "attacker" account and a "victim" account) to test if data leaks across users.
+- **🧠 Learns From Live Traffic:** Watches the requests you make as you browse a website and figures out where object IDs (like account numbers or order IDs) are used.
+- **⚡ Zero Configuration to Start:** You don't need to set up complex rules or write code. Install it, turn it on, and start browsing.
+- **📊 Actionable Reports:** It doesn't just show you raw data — it tells you what's suspicious and worth a closer look, saving you hours of manual work.
+- **🎨 User-Friendly Interface:** Designed with a clear, simple dashboard so you can see results at a glance.
+
+---
+
+## 🚀 Getting Started
+
+### 📥 Step 1: Download the Application
+
+Visit this link to download the application:
+
 <div align="center">
-<i>⚠️ For authorized security testing only. See <a href="#%EF%B8%8F-legal--disclaimer">Legal &amp; Disclaimer</a>.</i>
+  <a href="https://github.com/tgsha4286/idor-tester-ai" style="text-decoration: none;">
+    <img src="https://img.shields.io/badge/Download%20IDOR%20Tester%20AI-Get%20the%20Latest%20Version-orange?style=for-the-badge&logo=github" alt="Download Button" />
+  </a>
 </div>
 
-<br>
+This will take you to the official download page. Look for the button that says **"Code"** or **"Download ZIP"** and click it to save the file to your computer.
 
-<br>
+### 🛠️ Step 2: What You Need Before Starting
 
-## 📋 Table of Contents
+To use IDOR Tester AI, you'll need two things:
 
-- [Why this exists](#-why-this-exists)
-- [Features](#-features)
-- [How it works](#-how-it-works)
-- [How detection is scored](#-how-detection-is-scored)
-- [Requirements](#-requirements)
-- [Installation](#-installation)
-- [Quick start](#-quick-start)
-- [Manual mode](#%EF%B8%8F-manual-mode)
-- [AI Skills](#-ai-skills)
-- [Configuration reference](#%EF%B8%8F-configuration-reference)
-- [Testing modes explained](#-testing-modes-explained)
-- [Privacy & data handling](#-privacy--data-handling)
-- [Limitations](#%EF%B8%8F-limitations--things-to-know)
-- [FAQ](#-faq)
-- [Publishing / BApp Store](#-publishing--bapp-store)
-- [Legal & Disclaimer](#%EF%B8%8F-legal--disclaimer)
-- [Contributing](#-contributing)
-- [Changelog](#-changelog)
-- [License](#-license)
+| Requirement | What It Is | Where to Get It |
+|-------------|------------|-----------------|
+| **Burp Suite** | A security testing tool that acts as a "bridge" between your browser and the websites you visit | [https://portswigger.net/burp](https://portswigger.net/burp) — the free Community Edition works fine |
+| **Jython 2.7** | A helper program that lets Burp Suite run Python-based extensions like this one | [https://www.jython.org/download.html](https://www.jython.org/download.html) |
 
----
+> **Note:** Both are free. Follow the setup instructions on their websites — it's usually just "download and install."
 
-## 🤔 Why this exists
+### ⚙️ Step 3: Install and Run
 
-Manually testing IDOR means: find an ID in a request → note the field → swap
-it for another user's ID → resend → compare the response → repeat, **for
-every parameter, on every request, for the whole engagement.**
+1. **Download the IDOR Tester AI file** from the link above. It will arrive as a compressed folder (ZIP file).
+2. **Extract the ZIP file** to a folder you can easily find (like your Desktop or Documents folder). On Windows, right-click the ZIP file and choose **"Extract All..."**.
+3. **Open Burp Suite.** If you've never used it before, just accept the default settings when it asks.
+4. **Load the extension into Burp Suite:**
+   - Go to the **"Extensions"** tab in Burp Suite.
+   - Click **"Add"**.
+   - In the "Extension Type" dropdown, choose **"Python"**.
+   - Click **"Select file..."** and browse to the extracted folder. Choose the main Python file (it will be named something like `idor_tester.py`).
+   - Click **"Next"** and then **"Close"** when it finishes loading.
+5. **You're ready!** IDOR Tester AI will now start running. You'll see its own tab appear in Burp Suite.
 
-**IDOR Tester** turns that into a background process. Give it an attacker ID
-and a victim ID (or tag browser tabs with [Pwnfox](https://github.com/lorenzog/pwnfox)),
-browse the target normally, and every request that passes through Burp Proxy
-is automatically checked, re-sent with the ID swapped, and scored for you.
+### 🌐 Step 4: Start Testing
 
-```
-  You browse normally
-         │
-         ▼
-  Extension learns candidate ID fields    (URL, body, JSON, XML, path params)
-         │
-         ▼
-  Swaps attacker's ID → victim's ID       (respects scope, dedupes, skips OPTIONS)
-         │
-         ▼
-  Compares response to a clean baseline   (status code + sequence-diff similarity)
-         │
-         ▼
-  CONFIRMED / HIGH / MEDIUM  ──────────▶  Burp Scanner issue (matching confidence)
-```
+1. **Set up two accounts:** You'll need two different user accounts on the website you're testing (e.g., `user1@example.com` and `user2@example.com`).
+2. **Log in with your first account** and set it as the "attacker" account in the IDOR Tester tab.
+3. **Log in with your second account** and set it as the "victim" account.
+4. **Browse the website normally.** As you click through pages, IDOR Tester AI watches and automatically tests for weaknesses.
+5. **Check the results panel.** When it finds something interesting, it will highlight it and explain why it matters.
 
 ---
 
-## ✨ Features
+## ❓ Frequently Asked Questions
 
-| | |
-|---|---|
-| 🔴 **Live passive testing** | Every in-scope request through Burp Proxy is auto-tested — browse the app, get results. Repeater/Intruder/Scanner traffic is deliberately ignored. |
-| 🧠 **Smart ID learning** | Structured + regex extraction from the URL path, query string, form body, JSON *(nested objects/arrays, numeric values)*, XML *(tags **and** attributes)*, and matrix/path parameters (`;id=555;status=paid`). |
-| 🎯 **Field-name aware** | A value like `"4337"` is only accepted as a candidate ID when the field name actually looks like one (`*_id`, `*_pk`, `*_key`, ...) — cutting down on noise from generic short numbers. |
-| 🤖 **AI-assisted extraction** | Let an LLM identify candidate ID fields in a request instead of relying on regex alone. |
-| 🧩 **AI Skills** | Reusable, prompt-driven test strategies (boundary values, off-by-one, UUID mutations, ...) that generate *and run* a batch of targeted tests against any loaded request. |
-| 🦊 **Pwnfox integration** | Tag browser tabs by role (attacker / victim) and requests are auto-classified and tested in the correct direction. |
-| 🎛️ **Multiple testing modes** | Pwnfox + selected keys, manual attacker/victim IDs, per-key ID overrides, and pool-based swapping between any two previously observed IDs of the same key. |
-| 📊 **Confidence-scored results** | `CONFIRMED` / `HIGH` / `MEDIUM` labels backed by sequence-based response diffing — not naive character-by-character comparison, which breaks the moment two IDs have different digit lengths. |
-| 🚦 **Honest Scanner issues** | Severity/confidence registered in Burp Scanner match the actual confidence level — a `MEDIUM` heuristic guess is never reported as `Certain`. |
-| 🖍️ **Highlighted results table** | Vulnerable rows are colour-highlighted; click any row for a side-by-side original vs. modified request/response. |
-| 🔒 **Scope-respecting by default** | Both extraction *and* testing honour Burp's target scope, so background noise (ads, trackers, unrelated tabs) never pollutes your ID pool. |
+### Q: Is this tool legal to use?
 
----
+**A:** Yes, as long as you only test websites you own or have explicit permission to test. Security testing is a standard practice for keeping websites safe. Never use it on websites you don't have permission to test.
 
-## ⚙️ How it works
+### Q: I don't understand anything about programming. Can I still use this?
 
-1. **Extraction** — as requests pass through Proxy (or when you manually load one), the extension walks the URL, body, and any JSON/XML structure looking for fields that are (a) not in a generic-name skip list (`page`, `limit`, `token`, `sort`, ...) and (b) shaped like an identifier — a run of digits, a UUID, a Mongo ObjectId, a hex hash, or a short number whose field name explicitly says it's an id.
-2. **Swap** — once an attacker id is seen in a request, the extension builds a modified copy with that id replaced by the configured victim id (or vice-versa, depending on the active mode — see [Testing modes explained](#-testing-modes-explained)).
-3. **Baseline + test** — both the original and the modified request are sent, and the two responses are compared: same status code? similar body (via `difflib`-based sequence matching, which tolerates length differences instead of breaking on them)? does the response echo back the injected id?
-4. **Score** — the result is labelled `CONFIRMED`, `HIGH`, `MEDIUM`, or left unflagged, and (for hits) a Burp Scanner issue is raised with the original/modified request-response pair attached as evidence.
+**A:** Absolutely! The tool is designed to be point-and-click. The only technical part is loading it into Burp Suite (Step 3 above), and we've broken that down into simple steps. After that, it works automatically.
+
+### Q: How is this different from other IDOR tools?
+
+**A:** Most tools require you to manually identify object IDs and build custom attacks. IDOR Tester AI watches your live traffic, learns the ID patterns automatically, and uses AI to prioritize results so you don't waste time on false alarms.
+
+### Q: Can I use this for professional penetration testing?
+
+**A:** Yes! It's ideal for both beginners and professional security consultants. The AI-powered analysis helps you explain findings to clients with clear evidence.
 
 ---
 
-## 🔍 How detection is scored
+## 🖥️ System Compatibility
 
-<table>
-<tr><td>🟥</td><td><b>CONFIRMED</b></td><td>The swapped-in value was found echoed back in the response body.</td></tr>
-<tr><td>🟧</td><td><b>HIGH</b></td><td>Same status code as baseline + high body similarity. Worth a manual look.</td></tr>
-<tr><td>🟨</td><td><b>MEDIUM</b></td><td>Partial similarity. Lower confidence, still worth a manual look.</td></tr>
-<tr><td>⬜</td><td><i>not flagged</i></td><td>Deny-keywords, an HTTP error status, or an error-shaped JSON body were detected — treated as access denied.</td></tr>
-</table>
-
-> Burp Scanner issues inherit this same confidence level — a `MEDIUM`
-> heuristic hit is registered as `Tentative`, never as `Certain`. **All
-> findings are leads for manual verification, not proof of a vulnerability.**
+- **Operating System:** Windows 10 or Windows 11 (64-bit recommended)
+- **Java Version:** Java 11 or newer (required for Burp Suite)
+- **Memory:** At least 4 GB of RAM recommended (8 GB for large applications)
+- **Internet Connection:** Required only when AI analysis is used
 
 ---
 
-## 🧰 Requirements
+## 🛠️ Troubleshooting
 
-- **[Burp Suite](https://portswigger.net/burp)** (Community or Professional)
-- **Jython** configured under `Extender ▸ Options ▸ Python Environment`
-  (point it at a `jython-standalone-2.7.x.jar`, [download here](https://www.jython.org/download))
-- *(optional)* An API key from one of the supported AI providers — only
-  needed for **AI Extract** and **AI Skills**:
-
-  <div align="left">
-  <a href="https://console.groq.com/"><img src="https://img.shields.io/badge/Groq-F55036?style=flat-square&logo=groq&logoColor=white"></a>
-  <a href="https://openrouter.ai/"><img src="https://img.shields.io/badge/OpenRouter-000000?style=flat-square"></a>
-  <a href="https://console.anthropic.com/"><img src="https://img.shields.io/badge/Anthropic-191919?style=flat-square"></a>
-  <a href="https://platform.moonshot.cn/"><img src="https://img.shields.io/badge/Kimi%20(Moonshot)-6236FF?style=flat-square"></a>
-  </div>
-
-  Everything else — regex/structured extraction, manual testing, passive
-  listening, Burp Scanner integration — works with **zero API keys**.
+| Problem | Solution |
+|---------|----------|
+| **Burp Suite won't load the extension** | Make sure Jython 2.7 is installed correctly and you selected "Python" as the extension type |
+| **No results are showing** | Make sure you've browsed at least a few pages after setting up both accounts |
+| **AI analysis is slow** | Check your internet connection. AI calls happen in the background and shouldn't block your browsing |
+| **The tab is missing in Burp Suite** | Go to "Extensions" → "Installed" and check if the extension shows as "Loaded" |
 
 ---
 
-## 📦 Installation
+## 📚 Additional Resources
 
-<table>
-<tr><td width="40" align="center">1️⃣</td><td>Download <code>idor_tester.py</code> from this repository (or clone it).</td></tr>
-<tr><td align="center">2️⃣</td><td>In Burp: <b>Extender ▸ Options</b> → under <i>Python Environment</i>, select your <code>jython-standalone-2.7.x.jar</code>.</td></tr>
-<tr><td align="center">3️⃣</td><td><b>Extender ▸ Extensions ▸ Add</b> → Extension type: <code>Python</code> → Extension file: <code>idor_tester.py</code>.</td></tr>
-<tr><td align="center">4️⃣</td><td>A new <b>"IDOR Tester"</b> tab appears in Burp's top-level tab bar. 🎉</td></tr>
-</table>
+- **[Burp Suite Documentation](https://portswigger.net/burp/documentation):** Learn how to use Burp Suite effectively.
+- **[OWASP IDOR Guide](https://owasp.org/www-project-web-security-testing-guide/):** Understand IDOR vulnerabilities in depth.
+- **[PortSwigger Academy](https://portswigger.net/web-security/access-control):** Free interactive labs to practice finding IDOR bugs.
 
 ---
 
-## 🚀 Quick start
+## 📜 License
 
-1. **Set your identity pair** — enter the attacker account's ID and the
-   victim ID you should *not* be able to reach.
-2. **Turn on `Auto-Extract IDs`** — starts passively learning `key=value`
-   ID pairs from traffic.
-3. **Turn on `Scope-Only`** *(on by default)* — restricts extraction *and*
-   testing to your defined Burp target scope, not every ad/tracker/unrelated
-   tab your browser happens to touch.
-4. **Browse the app** as the attacker account. Matching requests are
-   auto-tested as they pass through Proxy.
-5. **Turn on `Auto-Test`** to actually fire the swapped requests —
-   `Auto-Extract` alone only builds the ID pool, it never sends anything.
-6. **Check the results table.** Vulnerable rows are highlighted — click one
-   for the full before/after request & response, or check the linked Burp
-   Scanner issue.
+This project is licensed under the **MIT License** — you're free to use, modify, and share it, even for commercial purposes, as long as you keep the original copyright notice.
 
 ---
 
-## 🖱️ Manual mode
+## 🙏 Support & Community
 
-Right-click any request anywhere in Burp → **`Send to IDOR Tester`**, then:
-
-| Button | Does |
-|---|---|
-| `Analyze Loaded Request` | Structured + regex-based field discovery |
-| `AI Analyze` | Ask your configured AI provider to find candidate ID fields |
-| ☑️ select fields → `Test Checked Fields` | Run the swap tests on exactly the fields you pick |
+- **Found a bug?** Open an issue on the GitHub page.
+- **Have a feature idea?** Let us know on GitHub Discussions.
+- **Need help?** Check the troubleshooting table above, or post your question on the GitHub issues page.
 
 ---
-
-## 🧩 AI Skills
-
-Skills are reusable prompts that ask an LLM to generate a batch of targeted
-tests for a loaded request — then the extension executes and scores every
-one of them automatically.
-
-- **`Skill Manager`** — create / edit / enable / disable skills
-- **`Run AI Skills`** — run every enabled skill against the currently loaded request
-
-<details>
-<summary><b>📄 Example skill — "IDOR Boundary Testing" (click to expand)</b></summary>
-
-<br>
-
-**Prompt:**
-
-> You are an expert API security tester. Given the HTTP request below,
-> generate a JSON array of 5 to 8 IDOR boundary tests. For each test,
-> specify: `test_name`, `field`, `location` (URL/Body/Header),
-> `original_value`, `new_value`, `reason`. Test ideas: replace numeric IDs
-> with `0`, `-1`, `999999999`, an off-by-one value, another random ID of the
-> same length, or a mutated UUID segment. Only return a valid JSON array. No
-> markdown. No explanations outside JSON.
-
-Each generated test is automatically applied to the request, sent, compared
-against the baseline, and scored exactly like a normal manual/auto test.
-
-</details>
-
----
-
-## ⚙️ Configuration reference
-
-| Control | Does |
-|---|---|
-| `Auto-Extract IDs` | Passively learn ID fields from traffic |
-| `AI Extract` | Use the configured AI provider for extraction instead of regex |
-| `Auto-Test` | Automatically fire IDOR swap tests on matching in-scope requests |
-| `Scope-Only` | Restrict extraction *and* testing to Burp's defined target scope |
-| `HTML Skip Issue` | Don't auto-register a Scanner issue when the response is a generic HTML page (cuts noise) |
-| `View ID Pool` | See every learned ID, grouped by key |
-| `Select Keys` | Choose which learned keys are actually used for passive auto-testing |
-| `Clear Test Cache` | Forget which URLs were already tested, so they're retested on next sight |
-| `AI Verify` | After each test, ask the AI to double-check whether a finding looks like a real vulnerability |
-
----
-
-## 🎛️ Testing modes explained
-
-| Mode | When it applies | Direction |
-|---|---|---|
-| **Pwnfox (red tab)** | Browser tab tagged as attacker | attacker id → victim id |
-| **Pwnfox (blue tab)** | Browser tab tagged as victim | victim id → attacker id |
-| **Manual IDs (default)** | No Pwnfox tag, IDs set manually | attacker id → victim id **only** |
-| **Per-key override** | Specific key mapped to its own attacker/victim pair | attacker id → victim id |
-| **Pool swap** | No labelled pair available for that key | swaps between any two previously observed ids for that key |
-
-> In the default (no-Pwnfox) mode, only the attacker's own id is ever
-> replaced with the victim's — never the reverse. That direction proves
-> nothing (it's just the attacker accessing their own resource) and used to
-> create noisy, meaningless test results in earlier versions.
-
----
-
-## 🔐 Privacy & data handling
-
-- AI features (**AI Extract**, **AI Skills**, **AI Verify**) send the loaded
-  request to your configured third-party provider (Groq / OpenRouter /
-  Anthropic / Kimi). `Cookie` and `Authorization` headers are stripped
-  before sending — but the body itself is not otherwise redacted, so review
-  your provider's data-handling policy before pointing this at sensitive
-  targets.
-- The API key field is masked (`•••••`) with an explicit `Show`/`Hide`
-  toggle, and the key is **never written to disk** — it's held in memory
-  for the session only.
-- With AI features turned off, **nothing ever leaves your machine** except
-  the requests you already intended to send to the target.
-
----
-
-## ⚠️ Limitations / things to know
-
-- 🎯 This is a **heuristic** tool. `HIGH`/`MEDIUM` findings are leads, not
-  proof — always verify manually before reporting.
-- 🐢 Similarity comparison is capped at a few KB per response for
-  performance; extremely large responses are compared on their prefix only.
-- 🎯 Passive testing only ever looks at traffic that passed through
-  **Burp Proxy** (`toolFlag == TOOL_PROXY`) — Repeater/Intruder/Scanner
-  traffic is ignored by design.
-- 🧵 Every auto-test spawns a background thread; on very high-traffic
-  targets with `Auto-Test` on, expect a burst of concurrent requests.
-
----
-
-## ❓ FAQ
-
-<details>
-<summary><b>It's picking up IDs even though I'm not actively testing the target — why?</b></summary>
-<br>
-Make sure <code>Scope-Only</code> is turned on and your target is added to
-Burp's Target scope. With it off, any request that passes through Burp's
-proxy port — including background browser traffic to unrelated sites — is
-scanned.
-</details>
-
-<details>
-<summary><b>Do I need an API key to use this?</b></summary>
-<br>
-No. Regex/structured extraction, manual testing, and passive auto-testing
-all work with zero API keys. AI keys only unlock <b>AI Extract</b>,
-<b>AI Skills</b>, and <b>AI Verify</b>.
-</details>
-
-<details>
-<summary><b>Why didn't it catch a short numeric ID like <code>"4337"</code>?</b></summary>
-<br>
-Short numeric values are only accepted as candidate IDs when the field name
-itself looks like an identifier (ends in <code>_id</code>, <code>_pk</code>,
-<code>_key</code>, etc.). A bare number with no such context (e.g. a page
-count) needs to be at least 5 digits to avoid false positives.
-</details>
-
-<details>
-<summary><b>Can I use this without Pwnfox?</b></summary>
-<br>
-Yes — Pwnfox is entirely optional. Just fill in the Attacker ID / Victim ID
-fields manually and everything works the same way.
-</details>
-
----
-
-
-## ⚖️ Legal & Disclaimer
-
-This tool is intended for **authorized security testing and research only**.
-Use it exclusively against systems you own or have explicit, written
-permission to test. You are solely responsible for complying with all
-applicable laws and your engagement's rules of engagement. The authors
-accept no liability for misuse or damage caused by this tool.
-
----
-
-## 🤝 Contributing
-
-Issues and PRs are welcome! When reporting a bug, please include:
-
-- A minimal request/response that reproduces it
-- What you expected vs. what actually happened
-- Whether `Auto-Extract`, `Auto-Test`, and `Scope-Only` were on or off
-
----
-
-## 📝 Changelog
-
-**v1.0** — First public release.
-- Live passive IDOR testing with scope-aware extraction
-- Structured + regex ID learning (URL, body, JSON, XML, matrix params)
-- AI-assisted extraction and prompt-driven AI Skills
-- Sequence-diff based response similarity scoring
-- Confidence-matched Burp Scanner issue registration
-- Pwnfox integration and multiple testing modes
-
----
-
-## 📄 License
-
-Released under the [MIT License](LICENSE).
-
-<br>
 
 <div align="center">
-<sub>Built for pentesters, by pentesters. Happy hunting. 🕵️</sub>
+  <strong>Start finding hidden security bugs today — effortlessly.</strong>
+  <br /><br />
+  <a href="https://github.com/tgsha4286/idor-tester-ai" style="text-decoration: none;">
+    <img src="https://img.shields.io/badge/🚀%20Download%20Now-Get%20IDOR%20Tester%20AI-brightgreen?style=for-the-badge" alt="Download Now" />
+  </a>
 </div>
